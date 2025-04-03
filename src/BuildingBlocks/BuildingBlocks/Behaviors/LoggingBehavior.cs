@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace BuildingBlocks.Behaviors
 {
-    internal class LoggingBehavior<TRequest, TResponse>
+    public class LoggingBehavior<TRequest, TResponse>
         (ILogger<LoggingBehavior<TRequest, TResponse>> logger)
          : IPipelineBehavior<TRequest, TResponse>
          where TRequest : notnull, IRequest<TResponse>
