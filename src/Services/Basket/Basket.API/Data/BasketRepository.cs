@@ -1,6 +1,5 @@
 ﻿using Basket.API.Exceptions;
 using Basket.API.Models;
-using BuildingBlocks.Exceptions;
 using Marten;
 
 namespace Basket.API.Data
@@ -19,7 +18,7 @@ namespace Basket.API.Data
         public async Task<ShoppingCart> StoreBasket(ShoppingCart basket, CancellationToken cancellationToken = default)
         {
             sesion.Store(basket);
-            await sesion.SaveChangesAsync();
+            await sesion.SaveChangesAsync(cancellationToken);
             return basket;
         }
 
